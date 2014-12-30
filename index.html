@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>React Math</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 200;
+      margin: 0 auto;
+      width: 750px;
+    }
+    textarea {
+      font-family: monospace;
+      font-size: inherit;
+      height: 150px;
+      width: 100%;
+    }
+    pre {
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+<script src="//fb.me/react-with-addons-0.12.1.js"></script>
+<script src="//fb.me/JSXTransformer-0.12.1.js"></script>
+<script src="dist/react-math.js"></script>
+<script type="text/jsx">
+  var App = React.createClass({
+    getInitialState: function() {
+      return {
+        value: 'e^(i pi)=-1'
+      };
+    },
+
+    render: function () {
+      return (
+        <div>
+          <h1>react-math</h1>
+          <h4>text:</h4>
+          <input name='type' type='text' onChange={this.onInputChange}
+defaultValue={this.state.value}/>
+          <h4>MathML:</h4>
+          <MathML text={this.state.value}/>
+        </div>
+      );
+    },
+
+    onInputChange: function(e) {
+      this.setState({value: e.target.value});
+    }
+  });
+
+  React.render(<App/>, document.body);
+</script>
+</body>
+</html>

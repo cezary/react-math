@@ -1,0 +1,8 @@
+#!/bin/sh
+webpack --devtool source-map
+
+node_modules/.bin/uglifyjs dist/react-math.js \
+  --output dist/react-math.min.js \
+  --source-map dist/react-math.min.map \
+  --source-map-url react-math.min.map \
+  --compress warnings=false
