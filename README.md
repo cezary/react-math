@@ -1,6 +1,6 @@
 # react-math
 
-Format math text into MathML
+Format math text into MathML. Uses the [ascii-math](https://github.com/ForbesLindesay/ascii-math) module, please note not all browsers support mathml: [caniuse... mathml](http://caniuse.com/#feat=mathml).
 
 ## Installation
 
@@ -27,6 +27,6 @@ var Component = React.createClass({
 });
 ```
 
-### License
+## License
 
 MIT
